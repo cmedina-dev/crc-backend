@@ -10,14 +10,14 @@
         "get",
         "post"
       ],
-      "route": "counter/get"
+      "route": "counter/increment"
     },
     {
       "type": "cosmosDB",
-      "direction": "in",
+      "direction": "out",
       "name": "doc",
-      "databaseName": "crc-db",
-      "collectionName": "crc-visitorcount",
+      "databaseName": "VisitorCounter",
+      "collectionName": "CounterTable",
       "createIfNotExists": "true",
       "connectionStringSetting": "AzureCosmosDBConnectionString",
       "sqlQuery": "SELECT * from c"

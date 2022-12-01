@@ -16,8 +16,8 @@
       "type": "cosmosDB",
       "direction": "in",
       "name": "doc",
-      "databaseName": "crc-db",
-      "collectionName": "crc-visitorcount",
+      "databaseName": "VisitorCounter",
+      "collectionName": "CounterTable",
       "createIfNotExists": "true",
       "connectionStringSetting": "AzureCosmosDBConnectionString",
       "sqlQuery": "SELECT * from c"
