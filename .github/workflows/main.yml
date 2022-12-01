@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 'Checkout GitHub action'
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ env.PYTHON_VERSION }}
 
