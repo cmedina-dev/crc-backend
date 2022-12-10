@@ -11,8 +11,15 @@ def main(req: func.HttpRequest, doc:func.DocumentList) -> func.HttpResponse:
         count = doc[0]["count"]
     else:
         count = 0
-        
-    return func.HttpResponse(
-        count,
-        status_code=200
-    )
+    #doc[0]["count"] = doc[0]["count"] + 1
+
+    if not count is None:
+        return func.HttpResponse(
+            doc[0].to_json(),
+            mimetype="application/json"
+        )
+    else:
+        return func.HttpResponse(
+            "Count returned null / undefined.",
+            status_code=200
+        )
