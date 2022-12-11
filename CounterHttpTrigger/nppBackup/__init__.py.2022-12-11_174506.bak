@@ -7,9 +7,11 @@ def main(req: func.HttpRequest, doc:func.DocumentList) -> func.HttpResponse:
     logging.info("Python HTTP trigger function processed a request.")
     #logging.info(doc[0].to_json())
     
-    try:
-        count = doc[0]["count"]        
-    except IndexError as e:
+    if len(doc) > 0:
+        if doc[0]["count"]:
+            count = doc[0]["count"]
+    
+    if not count:
         count = 0
     
     return func.HttpResponse(
