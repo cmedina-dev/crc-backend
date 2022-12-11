@@ -15,6 +15,6 @@ def main(req: func.HttpRequest, doc:func.DocumentList) -> func.HttpResponse:
     count = 0
     
     return func.HttpResponse(
-        str(count),
+        count,
         status_code=200
     )
