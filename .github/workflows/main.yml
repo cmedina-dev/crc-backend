@@ -40,23 +40,16 @@ jobs:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} 
-    - name: 'Setup Node.js'
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
-    - name: 'Cache dependencies'
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: npm-${{ hashFiles('package-lock.json') }}
-        restore-keys: npm-
-    - name: 'Install dependencies'
-      run: npm ci --ignore-scripts
-    - name: 'Cypress run'
-      uses: cypress-io/github-action@v5 # use the explicit version number
-      with:
-        spec: node_modules/.bin/e2e/spec.cy.js
-        working-directory: ./
-        build: npm run cy:spec
-        start: npm start
+    - name: Cypress Tests
+  cypress-run:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+          # Install NPM dependencies, cache them correctly
+          # and run all Cypress tests
+          - name: Cypress run
+            uses: cypress-io/github-action@v2
+            with:
+              build: npm run build
+              start: npm start
