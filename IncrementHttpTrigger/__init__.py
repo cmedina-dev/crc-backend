@@ -15,24 +15,24 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
     except HTTPError as e:
         return func.HttpResponse(f"An unexpected error accessing the API occurred. Error: {e}")
 
-    #logging.info('Requested URL opened.')
+    logging.info('Requested URL opened.')
 
-    #data = json.loads(res.read())
-    #logging.info(data)
+    data = json.loads(res.read())
+    logging.info(data)
 
-    #new_doc = func.DocumentList()
+    new_doc = func.DocumentList()
 
-    #if not data['count']:
-    #    data['count'] = 0
+    if not data['count']:
+        data['count'] = 0
 
-    #new_data = {
-    #    "id": "VisitCount",
-    #    "count": data['count'] + 1
-    #}
+    new_data = {
+        "id": "VisitCount",
+        "count": data['count'] + 1
+    }
     
-    #logging.info('Appending data...')
+    logging.info('Appending data...')
     
-    #new_doc.append(func.Document.from_dict(new_data))
-    #doc.set(new_doc)
+    new_doc.append(func.Document.from_dict(new_data))
+    doc.set(new_doc)
 
     return func.HttpResponse("HTTP triggered function executed successfully.", status_code=200)
