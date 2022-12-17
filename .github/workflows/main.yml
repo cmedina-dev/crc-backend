@@ -52,4 +52,5 @@ jobs:
         build: npm run
         start: npm start
         spec: node_modules/.bin/e2e/crc/spec.cy.js
+        config-file: node_modules/.bin/cypress.config.js
         working-directory: ./
