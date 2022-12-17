@@ -30,8 +30,10 @@ jobs:
     - name: 'Determine file listings'
       run: |
         ls -la
+        pwd
         cd "node_modules/.bin/e2e/"
         ls -la
+        pwd
     - name: 'Run Azure Functions action'
       uses: Azure/functions-action@v1
       with:
