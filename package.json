@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "cy:spec": "cypress run --spec \"node_modules/.bin/e2e/spec.cy.js\" --config-file \"node_modules/.bin/cypress.config.js\""
+    "cy:spec": "cypress run --spec=node_modules/.bin/e2e/spec.cy.js --config-file=node_modules/.bin/cypress.config.js"
   },
   "repository": {
     "type": "git",
