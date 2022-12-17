@@ -144,3 +144,4 @@ backup.tf*
 .terraform.*
 *.pfx
 Terraform/cloudresumechallenge/.terraform/
+node_modules
