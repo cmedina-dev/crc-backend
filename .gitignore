@@ -136,3 +136,11 @@ __azurite_db*__.json
 
 # Terraform
 config.tf
+nppBackup/
+main.tfplan.
+terraform.*
+*tfplan*
+backup.tf*
+.terraform.*
+*.pfx
+Terraform/cloudresumechallenge/.terraform/
