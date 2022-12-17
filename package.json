@@ -2,22 +2,16 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "cypress.config.js",
   "dependencies": {
     "cypress": "^12.1.0"
   },
   "devDependencies": {
-    "cypress": "^7.0.0",
+    "cypress": "^12.1.0",
     "http-server": "^0.12.3",
-    "rollup": "2.44.0"
   },
   "scripts": {
-    "build": "rollup -c",
-    "start": "http-server",
-    "test": "cypress run",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "cypress:record": "cypress run --record --key"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
