@@ -27,6 +27,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt --target=".python_packages/lib/site-packages"
         popd
+    - name: 'Determine file listings'
+      run: |
+        ls -la
+        cd "node_modules/.bin/e2e/"
+        ls -la
     - name: 'Run Azure Functions action'
       uses: Azure/functions-action@v1
       with:
@@ -51,5 +56,5 @@ jobs:
       with:
         spec: node_modules/.bin/e2e/spec.cy.js
         working-directory: ./
-        build: npm run cy:spec "node_modules/.bin/e2e/spec.cy.js" --config-file node_modules/.bin/cypress.config.js
+        build: npm run cy:spec
         start: npm start
