@@ -15,7 +15,7 @@ def main(req: func.HttpRequest, doc:func.DocumentList) -> func.HttpResponse:
     count_dict = {'count': count}
     
     return func.HttpResponse(
-        json.dumps(countJSON),
+        json.dumps(count_dict),
         mimetype="application/json",
         status_code=200
     )
