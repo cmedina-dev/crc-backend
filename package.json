@@ -6,9 +6,18 @@
   "dependencies": {
     "cypress": "^12.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cypress": "^7.0.0",
+    "http-server": "^0.12.3",
+    "rollup": "2.44.0"
+  },
   "scripts": {
-    "cy:spec": "cypress run --spec=node_modules/.bin/e2e/**.cy.js --config-file=node_modules/.bin/cypress.config.js"
+    "build": "rollup -c",
+    "start": "http-server",
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:record": "cypress run --record --key"
   },
   "repository": {
     "type": "git",
