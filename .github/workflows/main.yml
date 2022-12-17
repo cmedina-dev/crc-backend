@@ -39,4 +39,4 @@ jobs:
       with:
         build: npm run build
         start: npm start
-        
+        spec: node_modules/.bin/e2e/crc/spec.cy.js
