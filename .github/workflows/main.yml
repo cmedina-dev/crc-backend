@@ -49,8 +49,8 @@ jobs:
     - name: 'Cypress run'
       uses: cypress-io/github-action@v5 # use the explicit version number
       with:
-        build: npm run cy:spec "node_modules\.bin\e2e\spec.cy.js"
-        start: npm start
         spec: node_modules/.bin/e2e/spec.cy.js
         config-file: node_modules/.bin/cypress.config.js
         working-directory: ./
+        build: npm run cy:spec node_modules\.bin\e2e\spec.cy.js
+        start: npm start
