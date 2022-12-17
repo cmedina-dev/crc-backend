@@ -12,13 +12,12 @@ def main(req: func.HttpRequest, doc:func.DocumentList) -> func.HttpResponse:
     except IndexError as e:
         count = 0
     
-    countJSON = {
-        "count": count
-    }
+    count_dict = {'count': count}
     
-    countJSON = json.dumps(countJSON)
+    
+    countJSON = [count_dict]
     
     return func.HttpResponse(
-        countJSON.json(),
+        json.dumps(countJSON),
         status_code=200
     )

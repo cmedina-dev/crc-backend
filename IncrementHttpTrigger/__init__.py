@@ -25,7 +25,7 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
     if not data['count']:
         data['count'] = 0
 
-    new_data = {
+    new_data = {git 
         "id": "VisitCount",
         "count": data['count'] + 1
     }
