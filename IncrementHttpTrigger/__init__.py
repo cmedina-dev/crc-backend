@@ -17,7 +17,7 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
 
     logging.info('Requested URL opened.')
 
-    data = json.loads(res.read())
+    data = res.read()
     logging.info(data)
 
     new_doc = func.DocumentList()
