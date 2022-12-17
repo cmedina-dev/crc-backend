@@ -51,5 +51,5 @@ jobs:
       with:
         spec: node_modules/.bin/e2e/spec.cy.js
         working-directory: ./
-        build: npm run cy:spec node_modules/.bin/e2e/spec.cy.js cy:cfg node_modules/.bin/cypress.config.js
+        build: npm run cy:spec "node_modules/.bin/e2e/spec.cy.js" --config-file node_modules/.bin/cypress.config.js
         start: npm start
