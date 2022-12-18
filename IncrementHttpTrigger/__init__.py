@@ -5,7 +5,7 @@ import uuid
 from urllib.request import urlopen
 from urllib.error import HTTPError
 
-def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpResponse:
+async def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     URL = "https://crc-counterapp.azurewebsites.net/api/counter/get"
