@@ -26,7 +26,8 @@ class CounterUpdater(object):
             except ResourceExistsError:
                 table_entity = table_client.get_entity(partition_key=entity["PartitionKey"], row_key=entity["RowKey"])
                 table_entity["count"] += 1
-                
+            
+            table_client.update_entity(mode=UpdateMode.REPLACE, entity=table_entity)
             return table_entity
             
 
