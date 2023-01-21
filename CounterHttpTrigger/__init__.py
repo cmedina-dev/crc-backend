@@ -2,6 +2,9 @@ import os
 import copy
 import logging 
 
+from azure.data.tables import TableClient
+from azure.data.tables import UpdateMode
+from azure.core.exceptions import ResourceExistsError
 import azure.functions as func 
 
 class CounterUpdater(object):
@@ -9,11 +12,7 @@ class CounterUpdater(object):
         self.connection_string = os.getenv("AzureCosmosDBConnectionString")
         self.table_name = "crc-db"
 
-    def fetchEntityData(self):
-        from azure.data.tables import TableClient
-        from azure.data.tables import UpdateMode
-        from azure.core.exceptions import ResourceExistsError
-        
+    def fetchEntityData(self):      
         with TableClient.from_connection_string(self.connection_string, self.table_name) as table_client:
             entity = {
                 "PartitionKey": "visitorpart",
